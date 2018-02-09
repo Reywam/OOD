@@ -49,6 +49,10 @@ public class BigNumber implements IBigNumber {
 
             newNumberData.add(newDigit);
         }
+
+        if(carry) {
+            newNumberData.add(1);
+        }
         return new BigNumber(reverse(newNumberData));
     }
 
