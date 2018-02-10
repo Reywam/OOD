@@ -5,60 +5,91 @@ import java.util.List;
 
 public class BigNumber implements IBigNumber {
 
-    private List<Integer> value = new ArrayList();
+    private List<Character> value = new ArrayList();
 
     public BigNumber(String value) {
-        for(int i = value.length() - 1; i >= 0; i--) {
-            this.value.add(Character.getNumericValue(value.charAt(i)));
+        for (int i = value.length() - 1; i >= 0; i--) {
+            this.value.add(value.charAt(i));
         }
     }
 
-    public BigNumber(List<Integer> value) {
-        for(int i = value.size() - 1; i >= 0; i--) {
-            this.value.add(value.get(i));
-        }
-    }
-
-    private List<Integer> reverse(List<Integer> arr) {
-        List<Integer> reversedArr = new ArrayList<>();
-        for(int i = arr.size() - 1; i >= 0; i--) {
-            reversedArr.add(arr.get(i));
-        }
-        return reversedArr;
+    private String reverse(String str) {
+        return new StringBuffer(str).reverse().toString();
     }
 
     @Override
     public BigNumber Add(BigNumber number) {
-        if(number.size() > this.size()) {
-            this.upSizeTo(number.size());
-        }
-        List<Integer> newNumberData = new ArrayList<>();
-        boolean carry = false;
-        for(int i = 0; i < Math.max(this.value.size(), number.size()); i++) {
-            int newDigit = this.value.get(i) + number.value.get(i);
+        setSameSize(number);
 
-            if(carry) {
+        String newNumberData = "";
+        boolean carry = false;
+        for (int i = 0; i < Math.max(this.size(), number.size()); i++) {
+            int v1 = Character.getNumericValue(this.value.get(i));
+            int v2 = Character.getNumericValue(number.value.get(i));
+            int newDigit = v1 + v2;
+
+            if (carry) {
                 newDigit++;
                 carry = false;
             }
 
-            if(newDigit >= 10) {
+            if (newDigit >= 10) {
                 carry = true;
-                newDigit = newDigit - 10;
+                newDigit -= 10;
             }
 
-            newNumberData.add(newDigit);
+            newNumberData += Integer.toString(newDigit);
         }
 
-        if(carry) {
-            newNumberData.add(1);
+        if (carry) {
+            newNumberData += 1;
         }
-        return new BigNumber(reverse(newNumberData));
+
+        BigNumber newNumber = new BigNumber(reverse(newNumberData));
+        newNumber.removeBadZeros();
+        return newNumber;
     }
 
     @Override
     public BigNumber Sub(BigNumber number) {
-        return null;
+
+        int compareRes = compareTo(number);
+
+        if(compareRes == -1) {
+            BigNumber newNumber = number.Sub(this);
+            newNumber.value.add('-');
+            return newNumber;
+        }
+
+        setSameSize(number);
+
+        String newNumberData = "";
+
+        boolean carry = false;
+        for (int i = 0; i < number.size(); i++) {
+            int v1 = Character.getNumericValue(this.value.get(i));
+            int v2 = Character.getNumericValue(number.value.get(i));
+            int newDigit = v1 - v2;
+
+            if (carry) {
+                newDigit--;
+                carry = false;
+            }
+
+            if (newDigit < 0) {
+                carry = true;
+                newDigit += 10;
+            }
+
+            newNumberData += Integer.toString(newDigit);
+        }
+
+        if (carry) {
+            newNumberData += (0);
+        }
+        BigNumber newNumber = new BigNumber(reverse(newNumberData));
+        newNumber.removeBadZeros();
+        return newNumber;
     }
 
     @Override
@@ -74,7 +105,7 @@ public class BigNumber implements IBigNumber {
     @Override
     public String toString() {
         String value = "";
-        for(int i = this.value.size() - 1; i >= 0; i--) {
+        for (int i = this.value.size() - 1; i >= 0; i--) {
             value += this.value.get(i);
         }
         return value;
@@ -82,9 +113,27 @@ public class BigNumber implements IBigNumber {
 
     @Override
     public void upSizeTo(int size) {
-        if(this.size() < size) {
-            while(this.size() != size) {
-                this.value.add(0);
+        if (this.size() < size) {
+            while (this.size() != size) {
+                this.value.add('0');
+            }
+        }
+    }
+
+    void setSameSize(BigNumber number) {
+        if (number.size() > this.size()) {
+            this.upSizeTo(number.size());
+        } else {
+            number.upSizeTo(this.size());
+        }
+    }
+
+    void removeBadZeros() {
+        for (int i = this.size() - 1; this.size() > 1 && i >= 0; i--) {
+            if (value.get(i) != '0') {
+                break;
+            } else {
+                value.remove(i);
             }
         }
     }
@@ -92,5 +141,24 @@ public class BigNumber implements IBigNumber {
     @Override
     public int size() {
         return value.size();
+    }
+
+
+    public int compareTo(BigNumber number) {
+        int result = 0;
+        if (this.size() > number.size()) {
+            result = 1;
+        } else if (this.size() < number.size()) {
+            result = -1;
+        } else {
+            for (int i = number.size() - 1; i >= 0; i--) {
+                if (this.value.get(i) < number.value.get(i)) {
+                    result = -1;
+                    break;
+                }
+            }
+        }
+
+        return result;
     }
 }
