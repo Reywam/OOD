@@ -15,11 +15,9 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -27,12 +25,17 @@
       <file leaf-file-name="BigNumber.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="132" column="35" lean-forward="false" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
+            <state relative-caret-position="223">
+              <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#369#370#0" expanded="true" />
                 <element signature="e#434#435#0" expanded="true" />
+                <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
+                <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
+                <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
+                <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
+                <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1366" />
     <option name="height" value="728" />
   </component>
@@ -184,7 +187,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -255,18 +258,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java</url>
-          <line>89</line>
+          <line>55</line>
           <properties />
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java</url>
-          <line>131</line>
+          <line>133</line>
           <properties />
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -275,9 +290,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -289,6 +302,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
             <element signature="e#434#435#0" expanded="true" />
+            <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -297,9 +315,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -311,6 +327,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
             <element signature="e#434#435#0" expanded="true" />
+            <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -325,23 +346,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="132" column="35" lean-forward="false" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
+        <state relative-caret-position="223">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
             <element signature="e#434#435#0" expanded="true" />
+            <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
