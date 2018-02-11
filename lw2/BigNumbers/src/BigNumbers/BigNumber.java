@@ -140,17 +140,48 @@ public class BigNumber implements IBigNumber {
         return newNumber;
     }
 
-    public BigNumber Multiply(int number) {
-        BigNumber newNumber = this;
-        for (int i = 1; i < number; i++) {
-            newNumber = newNumber.Add(this);
-        }
-        return newNumber;
-    }
-
     @Override
-    public BigNumber Divide(BigNumber number) {
-        return null;
+    public BigNumber Divide(BigNumber number) throws IllegalArgumentException {
+        if (number.compareTo(new BigNumber("0")) == 0) {
+            throw new IllegalArgumentException("/ 0");
+        }
+
+        String newNumberData = "";
+        BigNumber newNumber = new BigNumber("0");
+        if (this.size() < number.size()) {
+            return newNumber;
+        }
+
+        while (!this.value.isEmpty()) {
+            BigNumber d1 = new BigNumber(this.value.get(this.size() - 1).toString());
+            this.value.remove(this.size() - 1);
+            do {
+                if (d1.compareTo(number) >= 0 || this.value.isEmpty()) {
+                    break;
+                }
+                int lastElement = this.size() - 1;
+                d1.value.add(0, this.value.get(lastElement));
+                this.value.remove(lastElement);
+            } while (!this.value.isEmpty());
+
+            BigNumber multResult = new BigNumber("0");
+            for (int divCoeff = 9; divCoeff >= 0; divCoeff--) {
+                multResult = number.Multiply(new BigNumber(Integer.toString(divCoeff)));
+                if (multResult.compareTo(d1) != 1) {
+                    newNumberData += Integer.toString(divCoeff);
+                    break;
+                }
+            }
+            BigNumber iterRes = d1.Sub(multResult);
+
+            if (iterRes.compareTo(new BigNumber("0")) != 0 && !this.value.isEmpty()) {
+                for (int i = 0; i < iterRes.size(); i++) {
+                    this.value.add(iterRes.value.get(i));
+                }
+            }
+        }
+        newNumber = new BigNumber(newNumberData);
+        return newNumber;
     }
 
     @Override
