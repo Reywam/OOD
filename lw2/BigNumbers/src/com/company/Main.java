@@ -3,7 +3,6 @@ package com.company;
 import BigNumbers.BigNumber;
 import Helpers.ArgumentsParser;
 import Helpers.OperationData;
-import jdk.nashorn.internal.runtime.regexp.joni.constants.Arguments;
 
 import java.io.BufferedReader;
 import java.io.File;

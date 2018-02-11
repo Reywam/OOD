@@ -5,11 +5,21 @@ import java.util.List;
 
 public class BigNumber implements IBigNumber {
 
+    final static int BASE = 10;
+    private boolean positive = true;
+
     private List<Character> value = new ArrayList();
 
     public BigNumber(String value) {
         for (int i = value.length() - 1; i >= 0; i--) {
+            if (value.charAt(i) == '-') {
+                positive = false;
+                continue;
+            }
             this.value.add(value.charAt(i));
+        }
+        if (!isValidValue()) {
+            throw new ExceptionInInitializerError("no digit character");
         }
     }
 
@@ -19,12 +29,27 @@ public class BigNumber implements IBigNumber {
 
     @Override
     public BigNumber Add(BigNumber number) {
+        if (this.isPositive() && !number.isPositive()) {
+            return this.Sub(number);
+        } else if (!this.isPositive() && number.isPositive()) {
+            return number.Sub(this);
+        } else if (!this.isPositive() && !number.isPositive()) {
+            this.positive = true;
+            number.positive = true;
+            BigNumber newNumber = Add(number);
+            this.positive = false;
+            number.positive = false;
+            newNumber.positive = false;
+            return newNumber;
+        }
+
         setSameSize(number);
 
         String newNumberData = "";
         boolean carry = false;
         for (int i = 0; i < number.size(); i++) {
             int v1 = Character.getNumericValue(this.value.get(i));
+
             int v2 = Character.getNumericValue(number.value.get(i));
             int newDigit = v1 + v2;
 
@@ -33,9 +58,9 @@ public class BigNumber implements IBigNumber {
                 carry = false;
             }
 
-            if (newDigit >= 10) {
+            if (newDigit >= BASE) {
                 carry = true;
-                newDigit -= 10;
+                newDigit -= BASE;
             }
 
             newNumberData += Integer.toString(newDigit);
@@ -53,11 +78,17 @@ public class BigNumber implements IBigNumber {
     @Override
     public BigNumber Sub(BigNumber number) {
 
-        int compareRes = compareTo(number);
+        if (!this.isPositive() && !number.isPositive()) {
+            number.positive = true;
+            BigNumber newNumber = Add(number);
+            //newNumber.positive = false;
+            return newNumber;
+        }
 
+        int compareRes = compareTo(number);
         if (compareRes == -1) {
             BigNumber newNumber = number.Sub(this);
-            newNumber.value.add('-');
+            newNumber.positive = false;
             return newNumber;
         }
 
@@ -78,7 +109,7 @@ public class BigNumber implements IBigNumber {
 
             if (newDigit < 0) {
                 carry = true;
-                newDigit += 10;
+                newDigit += BASE;
             }
 
             newNumberData += Integer.toString(newDigit);
@@ -96,6 +127,28 @@ public class BigNumber implements IBigNumber {
     public BigNumber Multiply(BigNumber number) {
         List<BigNumber> numbers = new ArrayList();
 
+        if (!this.isPositive() && !number.isPositive()) {
+            BigNumber firstArg = this;
+            firstArg.positive = true;
+
+            BigNumber secondArg = number;
+            secondArg.positive = true;
+
+            BigNumber newNumber = firstArg.Multiply(secondArg);
+
+            return newNumber;
+        } else if (!this.isPositive() || !number.isPositive()) {
+            BigNumber firstArg = this;
+            firstArg.positive = true;
+
+            BigNumber secondArg = number;
+            secondArg.positive = true;
+
+            BigNumber newNumber = firstArg.Multiply(secondArg);
+            newNumber.positive = false;
+            return newNumber;
+        }
+
         for (int i = 0; i < number.size(); i++) {
             int v1 = Character.getNumericValue(number.value.get(i));
             String newNumData = "";
@@ -109,9 +162,9 @@ public class BigNumber implements IBigNumber {
                     newValue += carryValue;
                 }
 
-                if (newValue >= 10) {
-                    carryValue = newValue / 10;
-                    newValue = newValue % 10;
+                if (newValue >= BASE) {
+                    carryValue = newValue / BASE;
+                    newValue = newValue % BASE;
                 }
 
                 newNumData += Integer.toString(newValue);
@@ -146,6 +199,29 @@ public class BigNumber implements IBigNumber {
             throw new IllegalArgumentException("/ 0");
         }
 
+        if (!this.isPositive() && !number.isPositive()) {
+            BigNumber firstArg = this;
+            firstArg.positive = true;
+
+            BigNumber secondArg = number;
+            secondArg.positive = true;
+
+            BigNumber newNumber = firstArg.Divide(secondArg);
+
+            return newNumber;
+        } else if (!this.isPositive() || !number.isPositive()) {
+            BigNumber firstArg = this;
+            firstArg.positive = true;
+
+            BigNumber secondArg = number;
+            secondArg.positive = true;
+
+            BigNumber newNumber = firstArg.Divide(secondArg);
+            newNumber.positive = false;
+
+            return newNumber;
+        }
+
         String newNumberData = "";
         BigNumber newNumber = new BigNumber("0");
         if (this.size() < number.size()) {
@@ -164,15 +240,15 @@ public class BigNumber implements IBigNumber {
                 this.value.remove(lastElement);
             } while (!this.value.isEmpty());
 
-            BigNumber multResult = new BigNumber("0");
-            for (int divCoeff = 9; divCoeff >= 0; divCoeff--) {
-                multResult = number.Multiply(new BigNumber(Integer.toString(divCoeff)));
-                if (multResult.compareTo(d1) != 1) {
-                    newNumberData += Integer.toString(divCoeff);
+            BigNumber multiplicationResult = new BigNumber("0");
+            for (int divCoefficient = BASE - 1; divCoefficient >= 0; divCoefficient--) {
+                multiplicationResult = number.Multiply(new BigNumber(Integer.toString(divCoefficient)));
+                if (multiplicationResult.compareTo(d1) != 1) {
+                    newNumberData += Integer.toString(divCoefficient);
                     break;
                 }
             }
-            BigNumber iterRes = d1.Sub(multResult);
+            BigNumber iterRes = d1.Sub(multiplicationResult);
 
             if (iterRes.compareTo(new BigNumber("0")) != 0 && !this.value.isEmpty()) {
                 for (int i = 0; i < iterRes.size(); i++) {
@@ -186,7 +262,7 @@ public class BigNumber implements IBigNumber {
 
     @Override
     public String toString() {
-        String value = "";
+        String value = positive ? "" : "-";
         for (int i = this.value.size() - 1; i >= 0; i--) {
             value += this.value.get(i);
         }
@@ -218,6 +294,21 @@ public class BigNumber implements IBigNumber {
                 value.remove(i);
             }
         }
+    }
+
+    public boolean isPositive() {
+        return positive;
+    }
+
+    private boolean isValidValue() {
+        boolean result = true;
+        for (int i = 0; i < this.size(); i++) {
+            if (!Character.isDigit(value.get(i))) {
+                result = false;
+                break;
+            }
+        }
+        return result;
     }
 
     @Override
