@@ -1,5 +1,7 @@
 package BigNumbers;
 
+import Helpers.ArgumentsPair;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,11 +36,13 @@ public class BigNumber implements IBigNumber {
         } else if (!this.isPositive() && number.isPositive()) {
             return number.Sub(this);
         } else if (!this.isPositive() && !number.isPositive()) {
-            this.positive = true;
-            number.positive = true;
+            BigNumber firstArg = this;
+            firstArg.positive = true;
+
+            BigNumber secondArg = number;
+            secondArg.positive = true;
+
             BigNumber newNumber = Add(number);
-            this.positive = false;
-            number.positive = false;
             newNumber.positive = false;
             return newNumber;
         }
@@ -49,7 +53,6 @@ public class BigNumber implements IBigNumber {
         boolean carry = false;
         for (int i = 0; i < number.size(); i++) {
             int v1 = Character.getNumericValue(this.value.get(i));
-
             int v2 = Character.getNumericValue(number.value.get(i));
             int newDigit = v1 + v2;
 
@@ -79,9 +82,9 @@ public class BigNumber implements IBigNumber {
     public BigNumber Sub(BigNumber number) {
 
         if (!this.isPositive() && !number.isPositive()) {
-            number.positive = true;
-            BigNumber newNumber = Add(number);
-            //newNumber.positive = false;
+            BigNumber arg = number;
+            arg.positive = true;
+            BigNumber newNumber = Add(arg);
             return newNumber;
         }
 
@@ -95,7 +98,6 @@ public class BigNumber implements IBigNumber {
         setSameSize(number);
 
         String newNumberData = "";
-
         boolean carry = false;
         for (int i = 0; i < number.size(); i++) {
             int v1 = Character.getNumericValue(this.value.get(i));
@@ -128,23 +130,13 @@ public class BigNumber implements IBigNumber {
         List<BigNumber> numbers = new ArrayList();
 
         if (!this.isPositive() && !number.isPositive()) {
-            BigNumber firstArg = this;
-            firstArg.positive = true;
-
-            BigNumber secondArg = number;
-            secondArg.positive = true;
-
-            BigNumber newNumber = firstArg.Multiply(secondArg);
+            ArgumentsPair pair = getPositiveCopies(this, number);
+            BigNumber newNumber = pair.getFirstArg().Multiply(pair.getSecondArg());
 
             return newNumber;
         } else if (!this.isPositive() || !number.isPositive()) {
-            BigNumber firstArg = this;
-            firstArg.positive = true;
-
-            BigNumber secondArg = number;
-            secondArg.positive = true;
-
-            BigNumber newNumber = firstArg.Multiply(secondArg);
+            ArgumentsPair pair = getPositiveCopies(this, number);
+            BigNumber newNumber = pair.getFirstArg().Multiply(pair.getSecondArg());
             newNumber.positive = false;
             return newNumber;
         }
@@ -200,23 +192,13 @@ public class BigNumber implements IBigNumber {
         }
 
         if (!this.isPositive() && !number.isPositive()) {
-            BigNumber firstArg = this;
-            firstArg.positive = true;
-
-            BigNumber secondArg = number;
-            secondArg.positive = true;
-
-            BigNumber newNumber = firstArg.Divide(secondArg);
+            ArgumentsPair pair = getPositiveCopies(this, number);
+            BigNumber newNumber = pair.getFirstArg().Divide(pair.getSecondArg());
 
             return newNumber;
         } else if (!this.isPositive() || !number.isPositive()) {
-            BigNumber firstArg = this;
-            firstArg.positive = true;
-
-            BigNumber secondArg = number;
-            secondArg.positive = true;
-
-            BigNumber newNumber = firstArg.Divide(secondArg);
+            ArgumentsPair pair = getPositiveCopies(this, number);
+            BigNumber newNumber = pair.getFirstArg().Divide(pair.getSecondArg());
             newNumber.positive = false;
 
             return newNumber;
@@ -229,26 +211,16 @@ public class BigNumber implements IBigNumber {
         }
 
         while (!this.value.isEmpty()) {
-            BigNumber d1 = new BigNumber(this.value.get(this.size() - 1).toString());
-            this.value.remove(this.size() - 1);
-            do {
-                if (d1.compareTo(number) >= 0 || this.value.isEmpty()) {
-                    break;
-                }
-                int lastElement = this.size() - 1;
-                d1.value.add(0, this.value.get(lastElement));
-                this.value.remove(lastElement);
-            } while (!this.value.isEmpty());
-
+            BigNumber dividend = createNumberForDivision(number);
             BigNumber multiplicationResult = new BigNumber("0");
             for (int divCoefficient = BASE - 1; divCoefficient >= 0; divCoefficient--) {
                 multiplicationResult = number.Multiply(new BigNumber(Integer.toString(divCoefficient)));
-                if (multiplicationResult.compareTo(d1) != 1) {
+                if (multiplicationResult.compareTo(dividend) != 1) {
                     newNumberData += Integer.toString(divCoefficient);
                     break;
                 }
             }
-            BigNumber iterRes = d1.Sub(multiplicationResult);
+            BigNumber iterRes = dividend.Sub(multiplicationResult);
 
             if (iterRes.compareTo(new BigNumber("0")) != 0 && !this.value.isEmpty()) {
                 for (int i = 0; i < iterRes.size(); i++) {
@@ -258,6 +230,21 @@ public class BigNumber implements IBigNumber {
         }
         newNumber = new BigNumber(newNumberData);
         return newNumber;
+    }
+
+    BigNumber createNumberForDivision(BigNumber divider) {
+        BigNumber dividend = new BigNumber(this.value.get(this.size() - 1).toString());
+        this.value.remove(this.size() - 1);
+        do {
+            if (dividend.compareTo(divider) >= 0 || this.value.isEmpty()) {
+                break;
+            }
+            int lastElement = this.size() - 1;
+            dividend.value.add(0, this.value.get(lastElement));
+            this.value.remove(lastElement);
+        } while (!this.value.isEmpty());
+
+        return dividend;
     }
 
     @Override
@@ -314,6 +301,16 @@ public class BigNumber implements IBigNumber {
     @Override
     public int size() {
         return value.size();
+    }
+
+    ArgumentsPair getPositiveCopies(BigNumber first, BigNumber second) {
+        BigNumber firstArg = first;
+        firstArg.positive = true;
+
+        BigNumber secondArg = second;
+        secondArg.positive = true;
+
+        return new ArgumentsPair(firstArg, secondArg);
     }
 
     public int compareTo(BigNumber number) {

@@ -15,21 +15,12 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#executeOperation#0;class#Main#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArgumentsParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Helpers/ArgumentsParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -38,38 +29,55 @@
         <entry file="file://$PROJECT_DIR$/input.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+              <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="output.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="output.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/output.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BigNumber.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BigNumber.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="147" column="39" lean-forward="false" selection-start-line="147" selection-start-column="39" selection-end-line="147" selection-end-column="39" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
+                <element signature="method#createNumberForDivision#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
+                <element signature="method#getPositiveCopies#0;class#BigNumber#0" expanded="false" />
                 <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArgumentsPair.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Helpers/ArgumentsPair.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="24" />
+              <folding>
+                <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/src/BigNumbers/IBigNumber.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -115,6 +123,7 @@
         <option value="$PROJECT_DIR$/src/Helpers/OperationData.java" />
         <option value="$PROJECT_DIR$/src/Helpers/ArgumentsParser.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/Helpers/ArgumentsPair.java" />
         <option value="$PROJECT_DIR$/output.txt" />
         <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/src/BigNumbers/BigNumber.java" />
@@ -122,8 +131,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="364" />
-    <option name="y" value="136" />
+    <option name="x" value="570" />
+    <option name="y" value="50" />
     <option name="width" value="628" />
     <option name="height" value="728" />
   </component>
@@ -142,8 +151,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,8 +189,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,7 +259,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -260,8 +268,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -272,8 +280,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -320,34 +328,79 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java</url>
-          <line>258</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java</url>
-          <line>82</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="55" />
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#executeOperation#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigNumbers/IBigNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5049">
+          <caret line="297" column="5" lean-forward="true" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#createNumberForDivision#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#getPositiveCopies#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#executeOperation#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -361,11 +414,13 @@
             <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#createNumberForDivision#0;class#BigNumber#0" expanded="false" />
             <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
             <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
             <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
             <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
             <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#getPositiveCopies#0;class#BigNumber#0" expanded="false" />
             <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
           </folding>
         </state>
@@ -377,6 +432,7 @@
           <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#executeOperation#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -390,11 +446,13 @@
             <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#createNumberForDivision#0;class#BigNumber#0" expanded="false" />
             <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
             <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
             <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
             <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
             <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#getPositiveCopies#0;class#BigNumber#0" expanded="false" />
             <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
           </folding>
         </state>
@@ -406,6 +464,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#executeOperation#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -419,11 +478,13 @@
             <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#createNumberForDivision#0;class#BigNumber#0" expanded="false" />
             <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
             <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
             <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
             <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
             <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#getPositiveCopies#0;class#BigNumber#0" expanded="false" />
             <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
           </folding>
         </state>
@@ -435,6 +496,7 @@
           <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#executeOperation#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -448,11 +510,13 @@
             <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
             <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#createNumberForDivision#0;class#BigNumber#0" expanded="false" />
             <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
             <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
             <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
             <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
             <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#getPositiveCopies#0;class#BigNumber#0" expanded="false" />
             <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
           </folding>
         </state>
@@ -480,13 +544,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/BigNumbers/IBigNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -498,46 +560,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/ArgumentsPair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BigNumbers/IBigNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="147" column="39" lean-forward="false" selection-start-line="147" selection-start-column="39" selection-end-line="147" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
-            <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#executeOperation#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigNumbers/BigNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#BigNumber#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#Add#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#Sub#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#createNumberForDivision#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#toString#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#upSizeTo#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#setSameSize#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#removeBadZeros#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#isValidValue#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#getPositiveCopies#0;class#BigNumber#0" expanded="false" />
+            <element signature="method#compareTo#0;class#BigNumber#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
