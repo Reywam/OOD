@@ -23,6 +23,7 @@ public class BigNumber implements IBigNumber {
         if (!isValidValue()) {
             throw new ExceptionInInitializerError("no digit character");
         }
+        removeBadZeros();
     }
 
     private String reverse(String str) {
@@ -204,40 +205,52 @@ public class BigNumber implements IBigNumber {
             return newNumber;
         }
 
-        String newNumberData = "";
+        StringBuffer newNumberData = new StringBuffer("");
         BigNumber newNumber = new BigNumber("0");
         if (this.size() < number.size()) {
             return newNumber;
         }
 
+        int digitCount = 0;
         while (!this.value.isEmpty()) {
-            BigNumber dividend = createNumberForDivision(number);
+            BigNumber dividend = createNumberForDivision(number, newNumberData, digitCount);
+            digitCount = 0;
             BigNumber multiplicationResult = new BigNumber("0");
             for (int divCoefficient = BASE - 1; divCoefficient >= 0; divCoefficient--) {
                 multiplicationResult = number.Multiply(new BigNumber(Integer.toString(divCoefficient)));
                 if (multiplicationResult.compareTo(dividend) != 1) {
-                    newNumberData += Integer.toString(divCoefficient);
+                    newNumberData.append(Integer.toString(divCoefficient));
                     break;
                 }
             }
             BigNumber iterRes = dividend.Sub(multiplicationResult);
 
             if (iterRes.compareTo(new BigNumber("0")) != 0 && !this.value.isEmpty()) {
+                digitCount = iterRes.size();
                 for (int i = 0; i < iterRes.size(); i++) {
                     this.value.add(iterRes.value.get(i));
                 }
             }
         }
-        newNumber = new BigNumber(newNumberData);
+        newNumber = new BigNumber(newNumberData.toString());
+        newNumber.removeBadZeros();
         return newNumber;
     }
 
-    BigNumber createNumberForDivision(BigNumber divider) {
-        BigNumber dividend = new BigNumber(this.value.get(this.size() - 1).toString());
-        this.value.remove(this.size() - 1);
+    BigNumber createNumberForDivision(BigNumber divider, StringBuffer newNumberData, int digitCount) {
+        String valueForDiv = "";
+        for(int i = 0; i <= digitCount && this.size() != 0; i++) {
+            valueForDiv += this.value.get(this.size() - 1).toString();
+            this.value.remove(this.size() - 1);
+        }
+
+        BigNumber dividend = new BigNumber(valueForDiv);
         do {
             if (dividend.compareTo(divider) >= 0 || this.value.isEmpty()) {
                 break;
+            }
+            if(digitCount >= 0) {
+                newNumberData.append('0');
             }
             int lastElement = this.size() - 1;
             dividend.value.add(0, this.value.get(lastElement));
