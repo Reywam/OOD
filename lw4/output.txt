@@ -1,0 +1,12 @@
+Triangle: 
+Area: 0
+Perimeter: 28000000000
+
+Rectangle: 
+Area: 100000000000000000000
+Perimeter: 40000000000
+
+Circle: 
+Area: 785000000000000000000000
+Perimeter: 3140000000000
+
